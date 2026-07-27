@@ -1,26 +1,121 @@
 @import "tailwindcss";
 
+/*
+ * Design tokens — extracted from Figma (file 30J52ojAoaa9k4oiKh3zyd, Home node 2:8291).
+ * Never hardcode these values in components — reference the tokens / tile classes.
+ */
+@theme {
+  --color-ink: #1f212d; /* primary text + titles (≈ Figma #000) */
+  --color-muted: #70748c; /* secondary text token */
+  --color-stroke: #d5d7da; /* borders, dividers */
+  --color-surface: #ffffff; /* page background */
+  --color-label: #000000; /* tag/eyebrow labels */
+  --color-link: #0033ff; /* intro role heading + inline accent links */
+
+  /* Case-study surfaces (from Figma case pages) */
+  --color-panel: #f9f9f9; /* light section panel + quote/note bg */
+  --color-panel-dark: #f0f0f0; /* alternating section panel */
+
+  /* Editorial case layout (Wallet / epayhub — luma-style long-read) */
+  --color-paper: #fffcfb; /* warm off-white page background */
+  --color-callout: #f4efee; /* warm-gray callout / image panels */
+  --color-body: #4a4a4a; /* long-form body text on paper */
+  --color-rule: #bcbcbc; /* quote/note left rule */
+  --color-note-blue: #a8daff; /* sticky notes */
+  --color-note-purple: #d3bdff;
+  --color-note-yellow: #ffe299;
+  --color-compare-before: #ffe3e3; /* before/after cards */
+  --color-compare-after: #ebffe6;
+
+  --radius-pill: 9999px; /* buttons */
+  --radius-tag: 6px; /* tag pills */
+  /* Tag hover morph target: half the tag's 32px height (12px text + 2×10px padding).
+     Animating to 9999px would snap — the browser interpolates the whole numeric
+     range, so the visible change ends instantly. 16px = true pill for this size. */
+  --radius-tag-hover: 16px;
+
+  --font-sans: var(--font-dm-sans);
+  --font-mono: var(--font-space-grotesk);
+  --font-display: var(--font-space-grotesk);
+}
+
+/* Works-grid tile backgrounds (gradients from Figma). Plain CSS so they are
+   always emitted — Tailwind v4 tree-shakes classes placed in @layer components. */
+.tile-green {
+  background-image: linear-gradient(to bottom, #2c8b6d 14%, #64f1c5 169%);
+}
+.tile-blue {
+  background-image: linear-gradient(to bottom, #1d5397 14%, #80bff8 169%);
+}
+.tile-orange {
+  background-image: linear-gradient(to bottom, #cf3c03 47%, #ffffff 146%);
+}
+.tile-indigo {
+  background-color: #f6f6f6;
+}
+.tile-yellow {
+  background-image: linear-gradient(to bottom, #ffdb77 30%, #ffffff 169%);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Fixed SiteHeader height; the Home hero fills the rest of the viewport.
+     Kept outside @theme so Tailwind can't tree-shake it (only arbitrary
+     var() references use it). */
+  --spacing-header: 104px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- Connect-the-dots hero (components/hero/ConnectTheDots) ----------------
+   Starter styling for the interaction's data-* hooks. The component ships no
+   color of its own — override or replace any of this freely. Without it the
+   line is stroke:none (invisible) and dots don't change state, so the puzzle
+   looks unresponsive even though the logic works. */
+[data-part="path"] {
+  fill: none;
+  stroke: var(--color-ink);
+  stroke-width: 3;
+}
+[data-part="lead"] {
+  fill: none;
+  stroke: var(--color-muted);
+  stroke-width: 2;
+  stroke-dasharray: 3 7;
+}
+[data-part="dot"] {
+  fill: var(--color-stroke);
+  transition: fill 0.25s ease;
+}
+[data-state="active"] [data-part="dot"] {
+  fill: var(--color-link);
+}
+[data-state="connected"] [data-part="dot"] {
+  fill: var(--color-ink);
+}
+/* Dot numbers are hidden — the highlighted (pulsing) active dot is cue enough,
+   and the numbers read as clutter. Set `display: block` to bring them back. */
+[data-part="label"] {
+  display: none;
+}
+[data-part="reveal"] {
+  fill: var(--color-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  [data-part="dot"] {
+    transition: none;
+  }
 }
