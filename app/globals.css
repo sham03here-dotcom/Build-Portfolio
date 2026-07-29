@@ -75,47 +75,8 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ---- Connect-the-dots hero (components/hero/ConnectTheDots) ----------------
-   Starter styling for the interaction's data-* hooks. The component ships no
-   color of its own — override or replace any of this freely. Without it the
-   line is stroke:none (invisible) and dots don't change state, so the puzzle
-   looks unresponsive even though the logic works. */
-[data-part="path"] {
-  fill: none;
-  stroke: var(--color-ink);
-  stroke-width: 3;
-}
-[data-part="lead"] {
-  fill: none;
-  stroke: var(--color-muted);
-  stroke-width: 2;
-  stroke-dasharray: 3 7;
-}
-[data-part="dot"] {
-  fill: var(--color-stroke);
-  transition: fill 0.25s ease;
-}
-[data-state="active"] [data-part="dot"] {
-  fill: var(--color-link);
-}
-[data-state="connected"] [data-part="dot"] {
-  fill: var(--color-ink);
-}
-/* Dot numbers are hidden — the highlighted (pulsing) active dot is cue enough,
-   and the numbers read as clutter. Set `display: block` to bring them back. */
-[data-part="label"] {
-  display: none;
-}
-[data-part="reveal"] {
-  fill: var(--color-ink);
-}
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-  }
-
-  [data-part="dot"] {
-    transition: none;
   }
 }

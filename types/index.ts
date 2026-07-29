@@ -2,13 +2,20 @@
 
 export type Accent = "green" | "blue" | "orange" | "indigo" | "yellow";
 
-/* ---------------------------------- hero interaction ---------------------------------- */
+/* ---------------------------------- hero animation ---------------------------------- */
 
-/** One point in the connect-the-dots hero puzzle. `id` is the connection order (1-based). */
-export interface Dot {
-  id: number;
-  x: number;
-  y: number;
+/** The hero's Rive animation (data/hero-rive.ts). */
+export interface RiveHero {
+  /** Path to the .riv under /public, e.g. "/rive/hero.riv". */
+  src: string;
+  /** Artboard name; omit to use the file's default. */
+  artboard?: string;
+  /** State-machine name; omit to use the file's first. */
+  stateMachine?: string;
+  /** Artboard width / height — reserves the column's space before load. */
+  aspect: number;
+  /** Accessible description of the animation. */
+  label: string;
 }
 
 /* ---------------------------------- case studies ---------------------------------- */

@@ -74,8 +74,8 @@ export const epayhub: CaseStudy = {
       image: {
         src: "/images/epayhub/checkout-before.svg",
         alt: "Existing checkout: payment-method list and the fee breakdown hidden a tap away",
-        width: 519,
-        height: 481,
+        width: 992,
+        height: 622,
       },
     },
     {
@@ -97,8 +97,8 @@ export const epayhub: CaseStudy = {
       image: {
         src: "/images/epayhub/solution-saving.svg",
         alt: "Redesigned payment sheet showing “You saving ₹114 by paying from wallet”",
-        width: 479,
-        height: 491,
+        width: 992,
+        height: 622,
       },
       mediaSide: "left",
       tone: "light",
@@ -111,13 +111,13 @@ export const epayhub: CaseStudy = {
         "Paying by card is always reactive: each bill is handled on its own, in the moment it lands, with a fee every time. The Wallet flips that. A 30-day forecast lays out everything coming due, so the user can fund once, on purpose, for the whole month ahead, and let it all run from the balance. It's a kind of foresight the card structurally can't offer, because a card only ever pays for what's already in front of you.",
       ],
       image: {
-        src: "/images/epayhub/solution-planning.png",
+        src: "/images/epayhub/solution-planning.svg",
         alt: "30-day forecast screen: total due, coverage ring and upcoming bills",
-        width: 834,
-        height: 1282,
+        width: 992,
+        height: 622,
       },
       mediaSide: "right",
-      tone: "dark",
+      tone: "light",
     },
     {
       type: "move",
@@ -130,8 +130,8 @@ export const epayhub: CaseStudy = {
       image: {
         src: "/images/epayhub/solution-autopay.svg",
         alt: "Autopay hub with per-item opt-in toggles for recurring payments",
-        width: 237,
-        height: 481,
+        width: 992,
+        height: 622,
       },
       mediaSide: "left",
       tone: "light",
