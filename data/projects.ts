@@ -22,6 +22,7 @@ export const projects: Project[] = [
     thumb: "/images/home/iirm-card.svg",
     thumbAlt: "IIRM insurance dashboard",
     order: 5,
+    hidden: true,
   },
   {
     slug: "fitness",

@@ -48,6 +48,7 @@ export function SiteFooter() {
                 <li key={link.label}>
                   <a
                     href={link.href}
+                    {...((link.href.startsWith("http") || link.href.endsWith(".pdf")) && { target: "_blank", rel: "noopener noreferrer" })}
                     className="group inline-flex items-center gap-1.5 font-mono text-sm uppercase tracking-[0.1em] text-ink"
                   >
                     <span className="underline decoration-transparent underline-offset-4 transition-colors duration-300 ease-out group-hover:decoration-ink motion-reduce:transition-none">

@@ -43,3 +43,5 @@ next-env.d.ts
 # design assets
 /screen assets/
 
+# static export bundle (npm run build:static)
+/portfolio-dist.zip

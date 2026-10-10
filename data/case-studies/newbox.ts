@@ -22,8 +22,8 @@ export const newbox: CaseStudy = {
   hero: {
     src: "/images/newbox/hero-mark.jpg",
     alt: "White Newbox mark over a dark architectural underside",
-    width: 1512,
-    height: 800,
+    width: 2268,
+    height: 1200,
   },
   sections: [
     {

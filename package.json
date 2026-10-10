@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "build:static": "EXPORT=1 next build"
   },
   "dependencies": {
     "@react-three/fiber": "^9.6.1",

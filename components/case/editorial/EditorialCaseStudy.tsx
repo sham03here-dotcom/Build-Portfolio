@@ -407,7 +407,11 @@ export function EditorialCaseStudy({ study }: Props) {
                   width={study.hero.width}
                   height={study.hero.height}
                   priority
-                  sizes="(min-width: 768px) 640px, 100vw"
+                  /* The article column, not the viewport: the 1392px container
+                     less its 60px gutters, the 11rem side-nav and the gap —
+                     1000px once the container caps out. Declaring 640px here
+                     had the browser upscaling a 640px file into that slot. */
+                  sizes="(min-width: 1392px) 1000px, (min-width: 768px) calc(100vw - 360px), calc(100vw - 48px)"
                   className="h-auto w-full"
                 />
               </Reveal>

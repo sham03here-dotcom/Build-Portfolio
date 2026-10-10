@@ -22,7 +22,7 @@ export const fitness: CaseStudy = {
     src: "/images/fitness/hero-watches.jpg",
     alt: "Three Apple Watch Ultra mockups showing weight dial, exercise hand-off and rest timer screens",
     width: 2268,
-    height: 1317,
+    height: 1200,
   },
   sections: [
     {

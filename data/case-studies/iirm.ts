@@ -126,8 +126,8 @@ export const iirm: CaseStudy = {
       image: {
         src: "/images/iirm/screen-02.png",
         alt: "Add-dependents form beside a live premium calculator",
-        width: 1170,
-        height: 1186,
+        width: 1692,
+        height: 1980,
       },
       mediaSide: "right",
       tone: "dark",

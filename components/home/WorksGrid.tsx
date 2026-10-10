@@ -4,7 +4,7 @@ import { WorkCard } from "./WorkCard";
 
 /** The "Works" section — a responsive 2-column grid of project tiles. */
 export function WorksGrid() {
-  const ordered = [...projects].sort((a, b) => a.order - b.order);
+  const ordered = projects.filter((p) => !p.hidden).sort((a, b) => a.order - b.order);
   return (
     <section id="works" className="mx-auto w-full max-w-[1392px] px-6 py-12 md:px-[60px]">
       <Reveal>

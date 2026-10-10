@@ -155,6 +155,8 @@ export interface Project {
   thumb: string;
   thumbAlt: string;
   order: number;
+  /** Hide from the Works grid and 404 the route, keeping the case study in the repo. */
+  hidden?: boolean;
 }
 
 /** A labelled external link (footer contact, resume, etc.). */

@@ -20,10 +20,10 @@ export const epayhub: CaseStudy = {
     { label: "PLATFORM", value: "Mobile App" },
   ],
   hero: {
-    src: "/images/epayhub/hero-wallet.svg",
+    src: "/images/epayhub/hero-wallet.jpg",
     alt: "Epayhub Wallet card floating over a phone on a green backdrop",
-    width: 1512,
-    height: 917,
+    width: 2268,
+    height: 1200,
   },
   sections: [
     {
